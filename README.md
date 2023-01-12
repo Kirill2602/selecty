@@ -5,27 +5,25 @@
 </div>
 
 ## :pushpin: Содержание:
-
-<ul>
-<li>Технологии и инструменты</li>
-<li>Реализованные проверки</li>
-<li>Сборка в Jenkins</li>
-<li>Запуск из терминала</li>
-<li>Allure отчет</li>
-<li>Интеграция с Allure TestOps</li>
-<li>Интеграция с Jira</li>
-<li>Отчет в Telegram</li>
-<li>Видео примеры прохождения тестов</li>
-</ul>
+- [Технологии и инструменты](#tech)
+- [Реализованные проверки](#checks)
+- [Сборка в Jenkins](#job)
+- [Запуск из терминала](#term)
+- [Allure отчет](#allure)
+- [Интеграция с Allure TestOps](#testOps)
+- [Интеграция с Jira](#jira)
+- [Отчет в Telegram](#tm)
+- [Видео примеры прохождения тестов](#video)
 
 ## :rocket: Технологии и инструменты
 
-| Intellij Idea      | Java         | Github  | JUnit 5  | Gradle | Selenide | Selenoid | Allure | Jenkins |
-| :------------- |-------------| ----- | ----- | ----- | ----- | ----- | ----- | -----: |
-| <a href="https://www.jetbrains.com/idea/"><img src="images/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a>      | <a href="https://www.java.com/"><img src="images/Java.svg" width="50" height="50"  alt="Java"/></a>| <a href="https://github.com/"><img src="images/Github.svg" width="50" height="50"  alt="Github"/></a> | <a href="https://junit.org/junit5/"><img src="images/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a> | <a href="https://gradle.org/"><img src="images/Gradle.svg" width="50" height="50"  alt="Gradle"/></a> | <a href="https://selenide.org/"><img src="images/Selenide.svg" width="50" height="50"  alt="Selenide"/></a> | <a href="https://aerokube.com/selenoid/"><img src="images/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a> | <a href="https://github.com/allure-framework/allure2"><img src="images/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a> | <a href="https://www.jenkins.io/"><img src="images/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>|
+| Intellij Idea                                                                                                                    | Java         | Github  | JUnit 5  | Gradle | Selenide | Selenoid | Allure | Jenkins |
+|:---------------------------------------------------------------------------------------------------------------------------------|-------------| ----- | ----- | ----- | ----- | ----- | ----- | -----: |
+| <a id ="tech" href="https://www.jetbrains.com/idea/"><img src="images/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a> | <a href="https://www.java.com/"><img src="images/Java.svg" width="50" height="50"  alt="Java"/></a>| <a href="https://github.com/"><img src="images/Github.svg" width="50" height="50"  alt="Github"/></a> | <a href="https://junit.org/junit5/"><img src="images/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a> | <a href="https://gradle.org/"><img src="images/Gradle.svg" width="50" height="50"  alt="Gradle"/></a> | <a href="https://selenide.org/"><img src="images/Selenide.svg" width="50" height="50"  alt="Selenide"/></a> | <a href="https://aerokube.com/selenoid/"><img src="images/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a> | <a href="https://github.com/allure-framework/allure2"><img src="images/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a> | <a href="https://www.jenkins.io/"><img src="images/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>|
 
 ## :scroll: Реализованные проверки
 
+<a id = "checks"></a>
 - Проверка текста на главной странице.
 - Проверка наличия необходимых ссылок в нав баре.
 - Проверка наличия необходимых ссылок в нав баре, после смены языка на английский.
@@ -39,7 +37,7 @@
 
 ## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/> Jenkins job
 
-<a target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/">Сборка в Jenkins</a>
+<a id="job" target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/">Сборка в Jenkins</a>
 <div align="center">
 <a href="https://jenkins.autotests.cloud/job/selecty_project/"><img src="images/jenkins_job.png" alt="Jenkins"/></a>
 </div>
@@ -60,7 +58,7 @@
 ## :computer: Запуск тестов из терминала
 
 Локальный запуск:
-
+<a id="term"></a>
 ```bash
 gradle clean test -Denv=local
 ```
@@ -81,7 +79,7 @@ test
 "-DbaseUrl=${BASE_URL}"
 ```
 
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/9/allure/">Allure report</a>
+## <img id="allure" src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/9/allure/">Allure report</a>
 
 ### Основное окно
 
@@ -106,7 +104,7 @@ test
 ### Дашборд
 
 <div align="center">
-<img title="Allure TestOps Dashboard" src="images/testOps.png">
+<img id="testOps" title="Allure TestOps Dashboard" src="images/testOps.png">
 </div>
 
 ### Тест-кейсы
@@ -118,18 +116,18 @@ test
 ## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с трекером задач <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-498">Jira</a>
 
 <div align="center">
-<img title="Jira" src="images/jira.png">
+<img id="jira" title="Jira" src="images/jira.png">
 </div>
 
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
 <div align="center">
-<img title="Allure Overview Dashboard" src="images/tm.png">
+<img id="tm" title="Allure Overview Dashboard" src="images/tm.png">
 </div>
 
 ### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
 
 <div align="center">
-<video src="https://user-images.githubusercontent.com/59203915/212070784-8b04f9f5-3d3d-4d86-90bb-f958c8455fc4.mp4"></video>
+<video id="video" src="https://user-images.githubusercontent.com/59203915/212070784-8b04f9f5-3d3d-4d86-90bb-f958c8455fc4.mp4"></video>
 <video src="https://user-images.githubusercontent.com/59203915/212070789-7ac73637-9758-47e6-9819-626f311a50d6.mp4"></video>
 </div>
