@@ -136,4 +136,6 @@ test
 ### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
 
 <p align="center">
+https://github.com/Kirill2602/selecty/blob/main/images/video1.mp4
+https://github.com/Kirill2602/selecty/blob/main/images/video2.mp4
 </p>
