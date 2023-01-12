@@ -1,5 +1,7 @@
 package ru.selecty;
 
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -10,6 +12,7 @@ public class SelectyTest extends TestBase {
     MainPage mainPage = new MainPage();
 
     @Test
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Check Main page text")
     @Step("Проверка текста на главной странице")
     public void checkMainPageText() {
@@ -18,6 +21,7 @@ public class SelectyTest extends TestBase {
 
     @Test
     @DisplayName("Check NavBar links text")
+    @Severity(SeverityLevel.CRITICAL)
     @Step("Проверка наличия необходимых ссылок в нав баре")
     public void checkNavBarLinksText() {
         mainPage.checkNavBarLinksText(getLinkText());
