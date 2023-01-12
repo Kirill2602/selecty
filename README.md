@@ -2,7 +2,6 @@
 
 <div style="display: flex; flex-direction:column;">
 <a target="_blank" href="https://www.selecty.ru/"><img src="images/selecty.jpg"></a>
-<a href="https://www.selecty.ru/" target="_blank">Веб сайт Selecty</a>
 </div>
 
 ## :pushpin: Содержание:
