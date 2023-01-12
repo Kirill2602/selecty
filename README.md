@@ -1,6 +1,7 @@
 <h1>Проект по автоматизации тестирования для Selecty</h1>
 
-<a target="_blank" href="https://www.selecty.ru/"><img src="images/selecty.jpg">Веб сайт Selecty</a>
+<a target="_blank" href="https://www.selecty.ru/"><img src="images/selecty.jpg"></a>
+<a href="https://www.selecty.ru/" target="_blank">Веб сайт Selecty</a>
 
 ## :pushpin: Содержание:
 
