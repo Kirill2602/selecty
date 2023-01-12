@@ -45,8 +45,8 @@ public class TestBase extends TestData {
 
     @BeforeEach
     public void addLogger() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         new MainPage().openPage();
+        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @AfterEach
