@@ -138,4 +138,7 @@ test
 <p align="center">
 https://user-images.githubusercontent.com/video1.mp4
 https://user-images.githubusercontent.com/video2.mp4
+
+https://raw.githubusercontent.com/Kirill2602/selecty/main/.github/images/video1.mp4
+https://raw.githubusercontent.com/Kirill2602/selecty/main/.github/images/video2.mp4
 </p>
