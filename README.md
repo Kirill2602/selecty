@@ -13,7 +13,8 @@
 <li>Интеграция с Allure TestOps</li>
 <li>Интеграция с Jira</li>
 <li>Отчет в Telegram</li>
-<li>Видео примеры прохождения тестов</li></ul>
+<li>Видео примеры прохождения тестов</li>
+</ul>
 
 ## :rocket: Технологии и инструменты
 
@@ -43,12 +44,12 @@
 - ✓ Проверка наличия всех необходимых ссылок на социальные сети компании.
 - ✓ Проверка Проверка лога консоли на наличие ошибок.
 
-## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
+## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/> Jenkins job
 
 <a target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/">Сборка в Jenkins</a>
-<p align="center">
+<div align="center">
 <a href="https://jenkins.autotests.cloud/job/selecty_project/"><img src="images/jenkins_job.png" alt="Jenkins"/></a>
-</p>
+</div>
 
 ### Параметры сборки в Jenkins:
 
@@ -87,55 +88,55 @@ test
 "-DbaseUrl=${BASE_URL}"
 ```
 
-## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/></a> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/9/allure/">Allure report</a>
+## <img src="images/Allure_Report.svg" width="25" height="25"  alt="Allure"/> Отчет в <a target="_blank" href="https://jenkins.autotests.cloud/job/selecty_project/9/allure/">Allure report</a>
 
 ### Основное окно
 
-<p align="center">
+<div align="center">
 <img title="Allure Overview Dashboard" src="images/allure_report.png">
-</p>
+</div>
 
 ### Тесты
 
-<p align="center">
+<div align="center">
 <img title="Allure Tests" src="images/allure_suites.png">
-</p>
+</div>
 
 ### Графики
 
-<p align="center">
+<div align="center">
 <img title="Allure Graphics" src="images/allure_graphs.png">
-</p>
+</div>
 
 ## <img src="images/Allure_EE.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/launch/18237">Allure TestOps</a>
 
 ### Дашборд
 
-<p align="center">
+<div align="center">
 <img title="Allure TestOps Dashboard" src="images/testOps.png">
-</p>
+</div>
 
 ### Тест-кейсы
 
-<p align="center">
+<div align="center">
 <img title="Allure TestOps Tests" src="images/testCases.png">
-</p>
+</div>
 
 ## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с трекером задач <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-498">Jira</a>
 
-<p align="center">
+<div align="center">
 <img title="Jira" src="images/jira.png">
-</p>
+</div>
 
 ## <img src="images/Telegram.svg" width="25" height="25"  alt="Allure"/></a> Уведомление в Telegram при помощи бота
 
-<p align="center">
+<div align="center">
 <img title="Allure Overview Dashboard" src="images/tm.png">
-</p>
+</div>
 
 ### <img src="images/Selenoid.svg" width="25" height="25"  alt="Allure"/></a> Примеры видео о прохождении тестов
 
-<p align="center">
+<div align="center">
 <video src="https://user-images.githubusercontent.com/59203915/212070784-8b04f9f5-3d3d-4d86-90bb-f958c8455fc4.mp4"></video>
 <video src="https://user-images.githubusercontent.com/59203915/212070789-7ac73637-9758-47e6-9819-626f311a50d6.mp4"></video>
-</p>
+</div>
