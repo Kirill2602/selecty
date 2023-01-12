@@ -23,12 +23,6 @@ public class TestBase extends TestData {
             Configuration.baseUrl = config.getBaseUrl();
             Configuration.browserSize = config.getBrowserSize();
         } else {
-//            Configuration.baseUrl = config.getBaseUrl();
-//            Configuration.remote = config.getRemote();
-//            Configuration.browser = config.getBrowser();
-//            Configuration.browserSize = config.getBrowserSize();
-//            Configuration.timeout = config.getTimeout();
-//            Configuration.browserVersion = config.getBrowserVersion();
             Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
             Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
             Configuration.browser = System.getProperty("browser", "chrome");
