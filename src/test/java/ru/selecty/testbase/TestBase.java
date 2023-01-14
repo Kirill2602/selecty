@@ -22,10 +22,8 @@ public class TestBase extends TestData {
         if (!config.getIsRemote()) {
             Configuration.baseUrl = config.getBaseUrl();
             Configuration.browserSize = config.getBrowserSize();
-            Configuration.pageLoadTimeout = 30000;
         } else {
             Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
-            Configuration.pageLoadTimeout = 30000;
             Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
             Configuration.browser = System.getProperty("browser", "chrome");
             Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
