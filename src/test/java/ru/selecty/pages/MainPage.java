@@ -5,8 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,6 +13,7 @@ public class MainPage {
     SelenideElement
             mainPageText = $x("//div[@class='tn-atom' and contains(text(), 'ЦИФРОВАЯ')]"),
             ruLanguageLink = $x("//a[text()='RU']"),
+            startedAnimation = $("#rec424911473"),
             enLanguageLink = $x("//a[text()='EN']");
     ElementsCollection
             navBarList = $$(".t228__centerside.t228__menualign_left .t228__list .t228__list_item .t-menu__link-item"),
@@ -38,6 +38,7 @@ public class MainPage {
     }
 
     public MainPage checkLinkSubMenu(String linkName, List<String> subMenuLinkList) {
+        startedAnimation.shouldHave(attribute("display", "none"));
         navBarList.findBy(text(linkName)).hover();
         visibleMenu.get(0).shouldBe(visible);
         for (int i = 0; i < visibleMenu.size(); i++) {
