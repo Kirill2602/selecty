@@ -13,7 +13,8 @@ public class MainPage {
     SelenideElement
             mainPageText = $x("//div[@class='tn-atom' and contains(text(), 'ЦИФРОВАЯ')]"),
             ruLanguageLink = $x("//a[text()='RU']"),
-            startedAnimation = $("#rec424911473"),
+            startedAnimationRu = $("#rec424911473"),
+            startedAnimationEn = $("#rec446218155"),
             enLanguageLink = $x("//a[text()='EN']");
     ElementsCollection
             navBarList = $$(".t228__centerside.t228__menualign_left .t228__list .t228__list_item .t-menu__link-item"),
@@ -23,6 +24,7 @@ public class MainPage {
 
     public void openPage() {
         open("/");
+        startedAnimationRu.shouldHave(attribute("style", "display: none;"));
     }
 
     public MainPage checkMainPageText() {
@@ -56,6 +58,7 @@ public class MainPage {
 
     public MainPage clickEnLanguageLink() {
         enLanguageLink.click();
+        startedAnimationEn.shouldHave(attribute("style", "display: none;"));
         return this;
     }
 }
