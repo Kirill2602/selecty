@@ -38,8 +38,8 @@ public class MainPage {
     }
 
     public MainPage checkLinkSubMenu(String linkName, List<String> subMenuLinkList) {
-        sleep(5000);
         navBarList.findBy(text(linkName)).hover();
+        visibleMenu.get(0).shouldBe(visible);
         for (int i = 0; i < visibleMenu.size(); i++) {
             assertEquals(visibleMenu.get(i).getText(), subMenuLinkList.get(i));
         }
