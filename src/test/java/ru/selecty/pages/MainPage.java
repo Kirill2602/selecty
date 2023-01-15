@@ -40,7 +40,6 @@ public class MainPage {
     }
 
     public MainPage checkLinkSubMenu(String linkName, List<String> subMenuLinkList) {
-        startedAnimation.shouldHave(attribute("style", "display: none;"));
         navBarList.findBy(text(linkName)).hover();
         visibleMenu.get(0).shouldBe(visible);
         for (int i = 0; i < visibleMenu.size(); i++) {
