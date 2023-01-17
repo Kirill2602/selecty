@@ -23,7 +23,7 @@ public class TestBase extends TestData {
             Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
         }
         Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
-        Configuration.remote = System.getProperty("remoteUrl");
+//        Configuration.remote = System.getProperty("remoteUrl");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.timeout = Long.parseLong(System.getProperty("timeout", "6000"));
