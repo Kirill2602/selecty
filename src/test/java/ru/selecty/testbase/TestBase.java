@@ -12,18 +12,11 @@ import ru.selecty.helpers.Attach;
 import ru.selecty.pages.MainPage;
 import ru.selecty.testdata.TestData;
 
-import java.util.Objects;
-
-import static java.util.Optional.empty;
-
 public class TestBase extends TestData {
     @BeforeAll
     public static void setUp() {
-        if (!Objects.equals(System.getProperty("remoteUrl"), "")) {
-            Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
-        }
         Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
-//        Configuration.remote = System.getProperty("remoteUrl");
+        Configuration.remote = System.getProperty("remoteUrl");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.timeout = Long.parseLong(System.getProperty("timeout", "6000"));
@@ -33,22 +26,6 @@ public class TestBase extends TestData {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
-//        if (!config.getIsRemote()) {
-//            Configuration.baseUrl = config.getBaseUrl();
-//            Configuration.browserSize = config.getBrowserSize();
-//        } else {
-//            Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
-//            Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
-//            Configuration.browser = System.getProperty("browser", "chrome");
-//            Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-//            Configuration.timeout = Long.parseLong(System.getProperty("timeout", "6000"));
-//            Configuration.browserVersion = System.getProperty("browserVersion", "100");
-//
-//            DesiredCapabilities capabilities = new DesiredCapabilities();
-//            capabilities.setCapability("enableVNC", true);
-//            capabilities.setCapability("enableVideo", true);
-//            Configuration.browserCapabilities = capabilities;
-//        }
     }
 
     @BeforeEach
