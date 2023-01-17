@@ -4,37 +4,51 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ru.selecty.config.ProjectConfig;
 import ru.selecty.helpers.Attach;
 import ru.selecty.pages.MainPage;
 import ru.selecty.testdata.TestData;
 
-public class TestBase extends TestData {
-    private static final ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
+import java.util.Objects;
 
+import static java.util.Optional.empty;
+
+public class TestBase extends TestData {
     @BeforeAll
     public static void setUp() {
-        if (!config.getIsRemote()) {
-            Configuration.baseUrl = config.getBaseUrl();
-            Configuration.browserSize = config.getBrowserSize();
-        } else {
-            Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
+        if (!Objects.equals(System.getProperty("remoteUrl"), "")) {
             Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
-            Configuration.browser = System.getProperty("browser", "chrome");
-            Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-            Configuration.timeout = Long.parseLong(System.getProperty("timeout", "6000"));
-            Configuration.browserVersion = System.getProperty("browserVersion", "100");
-
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
         }
+        Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
+        Configuration.remote = System.getProperty("remoteUrl");
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+        Configuration.timeout = Long.parseLong(System.getProperty("timeout", "6000"));
+        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+//        if (!config.getIsRemote()) {
+//            Configuration.baseUrl = config.getBaseUrl();
+//            Configuration.browserSize = config.getBrowserSize();
+//        } else {
+//            Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
+//            Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
+//            Configuration.browser = System.getProperty("browser", "chrome");
+//            Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
+//            Configuration.timeout = Long.parseLong(System.getProperty("timeout", "6000"));
+//            Configuration.browserVersion = System.getProperty("browserVersion", "100");
+//
+//            DesiredCapabilities capabilities = new DesiredCapabilities();
+//            capabilities.setCapability("enableVNC", true);
+//            capabilities.setCapability("enableVideo", true);
+//            Configuration.browserCapabilities = capabilities;
+//        }
     }
 
     @BeforeEach

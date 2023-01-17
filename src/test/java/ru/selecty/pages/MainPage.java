@@ -2,6 +2,7 @@ package ru.selecty.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -22,16 +23,19 @@ public class MainPage {
             socialLinks = $$(".t-sociallinks__wrapper a");
 
 
+    @Step("Открыть главную страницу")
     public void openPage() {
         open("/");
         startedAnimationRu.shouldHave(attribute("style", "display: none;"));
     }
 
+    @Step("Проверить видимость блока с текстом 'ЦИФРОВАЯ ТРАНСФОРМАЦИЯ ПОД КЛЮЧ'")
     public MainPage checkMainPageText() {
         mainPageText.shouldBe(visible);
         return this;
     }
 
+    @Step("Проверить текст ссылок в навбаре")
     public MainPage checkNavBarLinksText(List<String> linksText) {
         for (int i = 0; navBarList.size() > i; i++) {
             assertEquals(navBarList.get(i).getText(), linksText.get(i));
@@ -39,6 +43,7 @@ public class MainPage {
         return this;
     }
 
+    @Step("Проверить содержание выпадающего меню")
     public MainPage checkLinkSubMenu(String linkName, List<String> subMenuLinkList) {
         navBarList.findBy(text(linkName)).hover();
         visibleMenu.get(0).shouldBe(visible);
@@ -48,6 +53,7 @@ public class MainPage {
         return this;
     }
 
+    @Step("Проверить наличие ссылок на социальные сети компании")
     public MainPage checkPartOfSocialLinksHref(List<String> expectedResults) {
         for (int i = 0; i < socialLinks.size(); i++) {
             assertEquals(expectedResults.get(i), socialLinks.get(i).getAttribute("href"));
@@ -55,6 +61,7 @@ public class MainPage {
         return this;
     }
 
+    @Step("Переключить страницу на английский язык")
     public MainPage clickEnLanguageLink() {
         enLanguageLink.click();
         startedAnimationEn.shouldHave(attribute("style", "display: none;"));
