@@ -19,7 +19,7 @@ import static java.util.Optional.empty;
 public class TestBase extends TestData {
     @BeforeAll
     public static void setUp() {
-        if (!Objects.equals(System.getProperty("remoteUrl"), "")) {
+        if (!System.getProperty("remoteUrl").isEmpty()) {
             Configuration.remote = System.getProperty("remoteUrl", "https://" + System.getProperty("login") + ":" + System.getProperty("password") + "@" + System.getProperty("remoteDriverUrl")) + "/wd/hub";
         }
         Configuration.baseUrl = System.getProperty("baseUrl", "https://selecty.ru/");
