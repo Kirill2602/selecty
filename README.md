@@ -50,8 +50,7 @@
 - baseUrl (https://selecty.ru/)
 - remoteDriverUrl (selenoid.autotests.cloud)
 - timeout (4000)
-- env (remote)
-- selenoidUrl (https://${LOGIN}:${PASSWORD}@${REMOTE_DRIVER_URL})
+- remoteUrl (https://${LOGIN}:${PASSWORD}@${REMOTE_DRIVER_URL})
 - login
 - password
 
@@ -60,7 +59,7 @@
 Локальный запуск:
 <a id="term"></a>
 ```bash
-gradle clean test -Denv=local
+gradle clean test
 ```
 
 Удаленный запуск:
@@ -68,14 +67,10 @@ gradle clean test -Denv=local
 ```bash
 clean
 test
-"-Denv=${ENV}"
-"-Dlogin=${LOGIN}"
-"-Dpassword=${PASSWORD}"
-"-DremoteDriverUrl=${REMOTE_DRIVER_URL}"
+"-DremoteUrl=https://${LOGIN}:${PASSWORD}@${REMOTE_DRIVER_URL}/wd/hub"
 "-DbrowserSize=${BROWSER_SIZE}"
 "-DbrowserVersion=${BROWSER_VERSION}"
 "-Dbrowser=${BROWSER}"
-"-DremoteUrl=${SELENOID_URL}"
 "-DbaseUrl=${BASE_URL}"
 ```
 
@@ -90,7 +85,7 @@ test
 ### Тесты
 
 <div align="center">
-<img title="Allure Tests" src="images/allure_suites.png">
+<img title="Allure Tests" src="images/new_allure_tests.png">
 </div>
 
 ### Графики
@@ -110,7 +105,7 @@ test
 ### Тест-кейсы
 
 <div align="center">
-<img title="Allure TestOps Tests" src="images/testCases.png">
+<img title="Allure TestOps Tests" src="images/new_test_cases.png">
 </div>
 
 ## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с трекером задач <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-498">Jira</a>
