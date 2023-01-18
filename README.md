@@ -85,7 +85,7 @@ test
 ### Тесты
 
 <div align="center">
-<img title="Allure Tests" src="images/allure_test_new.png.png">
+<img title="Allure Tests" src="images/allure_test_new.png">
 </div>
 
 ### Графики
