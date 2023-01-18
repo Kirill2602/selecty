@@ -52,7 +52,7 @@ public class MainPage {
         step(String.format("Навести курсор на ссылку %s в навбаре", linkName), () -> {
             navBarList.findBy(text(linkName)).hover();
         });
-        step(String.format("Проверить, что первый элемент %s из выпадающего списка отобразился", visibleMenu.get(0).getText()), () -> {
+        step(String.format("Проверить, что первый элемент %s из выпадающего списка отобразился", subMenuLinkList.get(0)), () -> {
             visibleMenu.get(0).shouldBe(visible);
         });
         step(String.format("Проверить актуальность всего выпадающего списка %s", subMenuLinkList), () -> {
