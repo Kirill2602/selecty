@@ -49,10 +49,10 @@ public class MainPage {
     }
 
     public MainPage checkLinkSubMenu(String linkName, List<String> subMenuLinkList) {
-        step(String.format("Навести мышку на ссылку %s в навбаре", linkName), () -> {
+        step(String.format("Навести курсор на ссылку %s в навбаре", linkName), () -> {
             navBarList.findBy(text(linkName)).hover();
         });
-        step(String.format("Проверить, что первый элемент %s из выпадающего списка отобразился", visibleMenu.get(0)), () -> {
+        step(String.format("Проверить, что первый элемент %s из выпадающего списка отобразился", visibleMenu.get(0).getText()), () -> {
             visibleMenu.get(0).shouldBe(visible);
         });
         step(String.format("Проверить актуальность всего выпадающего списка %s", subMenuLinkList), () -> {
