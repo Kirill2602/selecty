@@ -52,7 +52,7 @@ public class MainPage {
         step(String.format("Навести мышку на ссылку %s в навбаре", linkName), () -> {
             navBarList.findBy(text(linkName)).hover();
         });
-        step("Проверить, что первый элемент из выпадающего списка отобразился", () -> {
+        step(String.format("Проверить, что первый элемент %s из выпадающего списка отобразился", visibleMenu.get(0)), () -> {
             visibleMenu.get(0).shouldBe(visible);
         });
         step(String.format("Проверить актуальность всего выпадающего списка %s", subMenuLinkList), () -> {
@@ -76,7 +76,7 @@ public class MainPage {
         step("Нажать кнопку EN, для переключения языка на английский", () -> {
             enLanguageLink.click();
         });
-        step("Проверить, что стартовая анимация, после переключения языка на английский закончилась", () -> {
+        step("Проверить, что анимация, после переключения языка на английский закончилась", () -> {
             startedAnimationEn.shouldHave(attribute("style", "display: none;"));
         });
         return this;
