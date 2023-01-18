@@ -85,7 +85,7 @@ test
 ### Тесты
 
 <div align="center">
-<img title="Allure Tests" src="images/new_allure_tests.png">
+<img title="Allure Tests" src="images/allure_test_new.png.png">
 </div>
 
 ### Графики
@@ -105,7 +105,7 @@ test
 ### Тест-кейсы
 
 <div align="center">
-<img title="Allure TestOps Tests" src="images/new_test_cases.png">
+<img title="Allure TestOps Tests" src="images/new_cases.png">
 </div>
 
 ## <img src="images/Jira.svg" width="25" height="25"  alt="Allure"/></a>Интеграция с трекером задач <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-498">Jira</a>
