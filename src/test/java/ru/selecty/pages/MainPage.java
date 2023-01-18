@@ -2,12 +2,12 @@ package ru.selecty.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainPage {
@@ -23,48 +23,62 @@ public class MainPage {
             socialLinks = $$(".t-sociallinks__wrapper a");
 
 
-    @Step("Открыть главную страницу")
     public void openPage() {
-        open("/");
-        startedAnimationRu.shouldHave(attribute("style", "display: none;"));
+        step("Открыть главную страницу", () -> {
+            open("/");
+        });
+        step("Проверить, что стартовая анимация закончилась", () -> {
+            startedAnimationRu.shouldHave(attribute("style", "display: none;"));
+        });
     }
 
-    @Step("Проверить видимость блока с текстом 'ЦИФРОВАЯ ТРАНСФОРМАЦИЯ ПОД КЛЮЧ'")
     public MainPage checkMainPageText() {
-        mainPageText.shouldBe(visible);
+        step("Проверить видимость блока с текстом 'ЦИФРОВАЯ ТРАНСФОРМАЦИЯ ПОД КЛЮЧ'", () -> {
+            mainPageText.shouldBe(visible);
+        });
         return this;
     }
 
-    @Step("Проверить текст ссылок в навбаре")
     public MainPage checkNavBarLinksText(List<String> linksText) {
-        for (int i = 0; navBarList.size() > i; i++) {
-            assertEquals(navBarList.get(i).getText(), linksText.get(i));
-        }
+        step(String.format("Проверить текст ссылок %s в навбаре", linksText), () -> {
+            for (int i = 0; navBarList.size() > i; i++) {
+                assertEquals(navBarList.get(i).getText(), linksText.get(i));
+            }
+        });
         return this;
     }
 
-    @Step("Проверить содержание выпадающего меню")
     public MainPage checkLinkSubMenu(String linkName, List<String> subMenuLinkList) {
-        navBarList.findBy(text(linkName)).hover();
-        visibleMenu.get(0).shouldBe(visible);
-        for (int i = 0; i < visibleMenu.size(); i++) {
-            assertEquals(visibleMenu.get(i).getText(), subMenuLinkList.get(i));
-        }
+        step(String.format("Навести мышку на ссылку %s в навбаре", linkName), () -> {
+            navBarList.findBy(text(linkName)).hover();
+        });
+        step("Проверить, что первый элемент из выпадающего списка отобразился", () -> {
+            visibleMenu.get(0).shouldBe(visible);
+        });
+        step(String.format("Проверить актуальность всего выпадающего списка %s", subMenuLinkList), () -> {
+            for (int i = 0; i < visibleMenu.size(); i++) {
+                assertEquals(visibleMenu.get(i).getText(), subMenuLinkList.get(i));
+            }
+        });
         return this;
     }
 
-    @Step("Проверить наличие ссылок на социальные сети компании")
     public MainPage checkPartOfSocialLinksHref(List<String> expectedResults) {
-        for (int i = 0; i < socialLinks.size(); i++) {
-            assertEquals(expectedResults.get(i), socialLinks.get(i).getAttribute("href"));
-        }
+        step(String.format("Проверить наличие ссылок на социальные сети компании %s", expectedResults), () -> {
+            for (int i = 0; i < socialLinks.size(); i++) {
+                assertEquals(expectedResults.get(i), socialLinks.get(i).getAttribute("href"));
+            }
+        });
         return this;
     }
 
-    @Step("Переключить страницу на английский язык")
     public MainPage clickEnLanguageLink() {
-        enLanguageLink.click();
-        startedAnimationEn.shouldHave(attribute("style", "display: none;"));
+        step("Нажать кнопку EN, для переключения языка на английский", () -> {
+            enLanguageLink.click();
+        });
+        step("Проверить, что стартовая анимация, после переключения языка на английский закончилась", () -> {
+            startedAnimationEn.shouldHave(attribute("style", "display: none;"));
+        });
         return this;
     }
 }
